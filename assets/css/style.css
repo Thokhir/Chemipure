@@ -1,0 +1,15 @@
+:root {
+    --primary: #0052cc;
+    --secondary: #00b894;
+}
+body { font-family: 'Segoe UI', sans-serif; }
+.navbar-brand { font-weight: 700; font-size: 1.8rem; letter-spacing: -1px; }
+.nav-link { font-weight: 500; }
+.header-right a { margin-left: 15px; font-weight: 500; }
+.hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/id/1015/1920/800'); background-size: cover; height: 90vh; }
+.card-product { transition: all 0.3s; }
+.card-product:hover { transform: translateY(-10px); box-shadow: 0 20px 30px rgba(0,0,0,0.1); }
+.btn-inquiry { background: #0052cc; color: white; }
+.scroll-container { overflow-x: auto; white-space: nowrap; padding: 20px 0; }
+.scroll-item { display: inline-block; width: 280px; margin-right: 20px; }
+.footer { background: #1a1a2e; color: #ccc; }
