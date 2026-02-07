@@ -6,23 +6,24 @@
     <title>Product Detail - ChemiPure</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- Same Header as index.html -->
+    <!-- TOP BLACK STRIP + MAIN NAV -->
 
     <div class="container py-5">
         <div class="row">
             <div class="col-md-6">
-                <img id="prod-img" class="img-fluid rounded" alt="">
+                <img id="prod-img" class="img-fluid rounded shadow" alt="">
             </div>
             <div class="col-md-6">
                 <h2 id="prod-name"></h2>
-                <p><strong>CAS Number:</strong> <span id="prod-cas"></span></p>
+                <p><strong>CAS:</strong> <span id="prod-cas"></span></p>
                 <p id="prod-desc"></p>
-
-                <div class="mt-4">
-                    <button id="inquiry-btn" class="btn btn-inquiry btn-lg me-3">Add to Inquiry</button>
-                    <button id="save-btn" class="btn btn-outline-primary btn-lg">Save for Later</button>
+                <div class="mt-4 d-flex gap-3">
+                    <button onclick="addToCart(1)" class="btn btn-success btn-lg">Add to Cart</button>
+                    <button onclick="addToInquiry(1)" class="btn btn-primary btn-lg">Add to Inquiry</button>
+                    <button onclick="saveForLater(1)" class="btn btn-outline-secondary btn-lg">Save for Later</button>
                 </div>
             </div>
         </div>
