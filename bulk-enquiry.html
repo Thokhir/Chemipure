@@ -8,75 +8,27 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- TOP BLACK STRIP + MAIN NAV (copy from index.html) -->
+    <!-- TOP BLACK STRIP + MAIN NAV -->
 
     <div class="container py-5">
         <h2 class="mb-4">Inquiry</h2>
         
-        <table class="table table-bordered align-middle">
-            <tbody>
+        <table class="table table-bordered align-middle" id="enquiryTable">
+            <thead class="table-light">
                 <tr>
-                    <td class="bg-light text-end fw-bold" style="width:180px;">Name</td>
-                    <td><input type="text" class="form-control"></td>
+                    <th>Category</th>
+                    <th>Product</th>
+                    <th>Quantity (g)</th>
+                    <th></th>
                 </tr>
-                <tr>
-                    <td class="bg-light text-end fw-bold">Phone</td>
-                    <td><input type="tel" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td class="bg-light text-end fw-bold">Phone2</td>
-                    <td><input type="tel" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td class="bg-light text-end fw-bold">E-mail</td>
-                    <td>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="yourname">
-                            <span class="input-group-text">@</span>
-                            <select class="form-select">
-                                <option>gmail.com</option>
-                                <option>yahoo.com</option>
-                                <option>outlook.com</option>
-                                <option>company.com</option>
-                            </select>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="bg-light text-end fw-bold">Product</td>
-                    <td>
-                        <div class="row g-2">
-                            <div class="col-4">
-                                <select class="form-select">
-                                    <option>Detailed</option>
-                                    <option>API</option>
-                                    <option>Linker</option>
-                                </select>
-                            </div>
-                            <div class="col-4">
-                                <select class="form-select"><option>Select</option></select>
-                            </div>
-                            <div class="col-4">
-                                <select class="form-select"><option>Select</option></select>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="bg-light text-end fw-bold align-top pt-3">Detailed</td>
-                    <td><textarea class="form-control" rows="6"></textarea></td>
-                </tr>
-                <tr>
-                    <td class="bg-light text-end fw-bold">Attachment File</td>
-                    <td>
-                        <div class="input-group">
-                            <input type="file" class="form-control">
-                            <span class="input-group-text">No file chosen</span>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
+            </thead>
+            <tbody></tbody>
         </table>
+
+        <button onclick="addRow()" class="btn btn-secondary mb-4">+ Add Compound</button>
+
+        <!-- Rest of the form (Name, Phone, Email, Detailed, Attachment) same as your screenshot -->
+        <!-- Paste your previous bulk-enquiry form fields here below the table -->
 
         <div class="text-end mt-4">
             <button class="btn btn-primary px-5" style="background:#0052cc;">Inquiry</button>
@@ -85,7 +37,47 @@
     </div>
 
     <!-- Footer -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="assets/js/script.js"></script>
+    <script>
+        function addRow() {
+            const tbody = document.querySelector('#enquiryTable tbody');
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>
+                    <select class="form-select" onchange="populateProducts(this)">
+                        <option value="">Select Category</option>
+                        <option value="API">API</option>
+                        <option value="Linkers">Linkers</option>
+                        <option value="Custom Synthesis">Custom Synthesis</option>
+                        <option value="Drug Discovery">Drug Discovery</option>
+                    </select>
+                </td>
+                <td>
+                    <select class="form-select product-select"><option>Select Product</option></select>
+                </td>
+                <td><input type="number" class="form-control" placeholder="Quantity"></td>
+                <td><button class="btn btn-danger btn-sm" onclick="this.closest('tr').remove()">×</button></td>
+            `;
+            tbody.appendChild(row);
+        }
+
+        function populateProducts(select) {
+            const category = select.value;
+            const productSelect = select.closest('tr').querySelector('.product-select');
+            productSelect.innerHTML = '<option>Select Product</option>';
+            
+            const filtered = products.filter(p => p.category === category);
+            filtered.forEach(p => {
+                const opt = document.createElement('option');
+                opt.value = p.id;
+                opt.textContent = p.name + ' (CAS: ' + p.cas + ')';
+                productSelect.appendChild(opt);
+            });
+        }
+
+        // Add one row by default
+        window.onload = () => { addRow(); };
+    </script>
 </body>
 </html>
