@@ -12,41 +12,31 @@
 
     <!-- TOP BLACK STRIP -->
     <div class="top-bar py-2 text-center">
-        <div class="container d-flex justify-content-end align-items-center gap-4">
+        <div class="container d-flex justify-content-end gap-4">
             <a href="#" onclick="login()">Login</a>
             <a href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</a>
             <a href="my-page.html">My Page</a>
             <a href="inquiry.html">Inquiry</a>
-            <a href="#" class="position-relative" onclick="alert('Cart: '+cart.length+' items')">
-                <i class="fas fa-shopping-cart"></i> Cart 
-                <span id="cart-count" class="badge bg-danger rounded-pill">0</span>
-            </a>
+            <a href="cart.html" class="position-relative">Cart <span class="cart-count badge bg-danger">0</span></a>
         </div>
     </div>
 
-    <!-- MAIN NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <!-- MAIN NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-3 text-primary" href="index.html">ChemiPure</a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="mainNav">
+            <a class="navbar-brand fw-bold text-primary fs-3" href="index.html">ChemiPure</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">☰</button>
+            <div class="collapse navbar-collapse" id="nav">
                 <ul class="navbar-nav mx-auto">
-                    <!-- Home Dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#about">About Us</a></li>
-                            <li><a class="dropdown-item" href="#mission">Our Mission</a></li>
+                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="mission.html">Our Mission</a></li>
                         </ul>
                     </li>
-
-                    <!-- Products Dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Products</a>
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Products</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="products.html?cat=API">APIs</a></li>
                             <li><a class="dropdown-item" href="products.html?cat=Linkers">Linkers</a></li>
@@ -54,84 +44,94 @@
                             <li><a class="dropdown-item" href="products.html?cat=Drug Discovery">Drug Discovery</a></li>
                         </ul>
                     </li>
-
-                    <li class="nav-item"><a class="nav-link" href="bulk-enquiry.html">Bulk Enquiry</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li><a class="nav-link" href="bulk-enquiry.html">Bulk Enquiry</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-
-                <!-- Search -->
-                <form class="d-flex w-25">
-                    <div class="input-group">
-                        <input type="text" id="search-top" class="form-control" placeholder="Search compounds or CAS...">
-                        <button class="btn btn-outline-primary" type="button"><i class="fas fa-search"></i></button>
-                    </div>
-                </form>
+                <form class="d-flex"><input type="text" class="form-control" placeholder="Search CAS or name..."></form>
             </div>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero d-flex align-items-center text-white" style="background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://picsum.photos/id/1015/1920/900'); height: 90vh;">
-        <div class="container">
+    <!-- HERO WITH SCROLLING TEXT ON IMAGE -->
+    <section class="hero d-flex align-items-center text-white" style="background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://picsum.photos/id/1015/1920/900') center/cover no-repeat;">
+        <div class="container position-relative z-3">
             <h1 class="display-3 fw-bold">High-Purity Research Compounds</h1>
-            <p class="lead">Accelerating Discovery with Ultra-Pure APIs, Linkers & Custom Molecules</p>
-            <a href="products.html" class="btn btn-light btn-lg px-5">Browse Products</a>
+            <p class="lead">Ultra-pure APIs • Custom Linkers • Drug Discovery Molecules</p>
+            <a href="products.html" class="btn btn-light btn-lg">Browse All Products</a>
         </div>
-    </section>
 
-    <!-- SCROLLING SECTION -->
-    <div class="scroll-marquee">
-        <div class="scroll-content">
-            <span class="scroll-item">High Purity Research Compounds</span>
-            <span class="scroll-item">Customized Linkers</span>
-            <span class="scroll-item">Customized APIs</span>
-            <span class="scroll-item">Customized Drug Discovery</span>
-            <!-- Duplicate for seamless loop -->
-            <span class="scroll-item">High Purity Research Compounds</span>
-            <span class="scroll-item">Customized Linkers</span>
-            <span class="scroll-item">Customized APIs</span>
-            <span class="scroll-item">Customized Drug Discovery</span>
-        </div>
-    </div>
-
-    <!-- ABOUT & MISSION SECTIONS -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2>About ChemiPure</h2>
-            <p class="lead">Leading global supplier of high-purity research chemicals for pharmaceutical R&amp;D, biotechnology, and academia.</p>
-        </div>
-    </section>
-
-    <section id="mission" class="py-5 bg-light">
-        <div class="container">
-            <h2>Our Mission</h2>
-            <p class="lead">To empower scientists worldwide with the purest compounds, fastest delivery, and unmatched technical support.</p>
-            <!-- Team images as before -->
-        </div>
-    </section>
-
-    <!-- PRODUCT CATEGORIES (Smart Cards) -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Product Categories</h2>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="card category-card h-100 border-0 shadow-sm text-center" onclick="location.href='products.html?cat=API'">
-                        <img src="https://picsum.photos/id/180/600/400" class="card-img-top" alt="APIs">
-                        <div class="card-body">
-                            <h4>APIs</h4>
-                            <p class="text-muted">Active Pharmaceutical Ingredients</p>
-                            <button class="btn btn-primary btn-sm">Explore</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Repeat 3 more times for Linkers, Custom Synthesis, Drug Discovery with different picsum ids -->
-                <!-- Example for Linkers: picsum.photos/id/201/600/400 -->
+        <!-- Scrolling marquee ON the image -->
+        <div class="hero-marquee">
+            <div class="scroll-content">
+                <span class="scroll-item">High Purity Research Compounds</span>
+                <span class="scroll-item">Customized Linkers</span>
+                <span class="scroll-item">Customized APIs</span>
+                <span class="scroll-item">Customized Drug Discovery</span>
+                <span class="scroll-item">High Purity Research Compounds</span>
+                <span class="scroll-item">Customized Linkers</span>
+                <span class="scroll-item">Customized APIs</span>
+                <span class="scroll-item">Customized Drug Discovery</span>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER (same as before) -->
+    <!-- 4 PRODUCT CATEGORIES BELOW HERO -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Categories</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card category-card h-100 border-0 shadow" onclick="location.href='product-detail.html?id=1'">
+                        <img src="https://picsum.photos/id/180/600/400" class="card-img-top">
+                        <div class="card-body text-center"><h5>APIs</h5></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card category-card h-100 border-0 shadow" onclick="location.href='product-detail.html?id=3'">
+                        <img src="https://picsum.photos/id/201/600/400" class="card-img-top">
+                        <div class="card-body text-center"><h5>Linkers</h5></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card category-card h-100 border-0 shadow" onclick="location.href='product-detail.html?id=5'">
+                        <img src="https://picsum.photos/id/220/600/400" class="card-img-top">
+                        <div class="card-body text-center"><h5>Custom Synthesis</h5></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card category-card h-100 border-0 shadow" onclick="location.href='product-detail.html?id=6'">
+                        <img src="https://picsum.photos/id/251/600/400" class="card-img-top">
+                        <div class="card-body text-center"><h5>Drug Discovery</h5></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>ChemiPure</h5>
+                    <p>Plot No. 12, Industrial Area, Phase-2<br>Chandigarh 160002, India<br>
+                    +91 98765 43210 | sales@chemi-pure.com</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>Website Visits: <strong id="visit-count">0</strong></p>
+                    <p>© 2026 ChemiPure • All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupModal">
+        <div class="modal-dialog"><div class="modal-content">
+            <div class="modal-header"><h5>Sign Up</h5></div>
+            <div class="modal-body"><input type="text" class="form-control mb-3" placeholder="Name"><input type="email" class="form-control mb-3" placeholder="Email"><button class="btn btn-primary w-100" onclick="alert('Account created!')">Create Account</button></div>
+        </div></div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
