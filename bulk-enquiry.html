@@ -8,14 +8,84 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- TOP BLACK STRIP + MAIN NAV -->
+    <!-- TOP BLACK STRIP + MAIN NAV (copy from index.html) -->
 
     <div class="container py-5">
-        <h2>Bulk Enquiry Form</h2>
-        <!-- Form code from previous message – just add the header/footer -->
-        <!-- (same form with compound table and + Add Compound button) -->
+        <h2 class="mb-4">Inquiry</h2>
+        
+        <table class="table table-bordered align-middle">
+            <tbody>
+                <tr>
+                    <td class="bg-light text-end fw-bold" style="width:180px;">Name</td>
+                    <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td class="bg-light text-end fw-bold">Phone</td>
+                    <td><input type="tel" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td class="bg-light text-end fw-bold">Phone2</td>
+                    <td><input type="tel" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td class="bg-light text-end fw-bold">E-mail</td>
+                    <td>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="yourname">
+                            <span class="input-group-text">@</span>
+                            <select class="form-select">
+                                <option>gmail.com</option>
+                                <option>yahoo.com</option>
+                                <option>outlook.com</option>
+                                <option>company.com</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg-light text-end fw-bold">Product</td>
+                    <td>
+                        <div class="row g-2">
+                            <div class="col-4">
+                                <select class="form-select">
+                                    <option>Detailed</option>
+                                    <option>API</option>
+                                    <option>Linker</option>
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <select class="form-select"><option>Select</option></select>
+                            </div>
+                            <div class="col-4">
+                                <select class="form-select"><option>Select</option></select>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg-light text-end fw-bold align-top pt-3">Detailed</td>
+                    <td><textarea class="form-control" rows="6"></textarea></td>
+                </tr>
+                <tr>
+                    <td class="bg-light text-end fw-bold">Attachment File</td>
+                    <td>
+                        <div class="input-group">
+                            <input type="file" class="form-control">
+                            <span class="input-group-text">No file chosen</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="text-end mt-4">
+            <button class="btn btn-primary px-5" style="background:#0052cc;">Inquiry</button>
+            <button class="btn btn-secondary px-5 ms-3">Cancel</button>
+        </div>
     </div>
 
     <!-- Footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
