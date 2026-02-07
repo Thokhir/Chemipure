@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- TOP BLACK STRIP + MAIN NAV -->
+    <!-- TOP BLACK STRIP + MAIN NAV (copy from index.html) -->
 
     <div class="container py-5">
         <div class="row">
@@ -21,16 +21,17 @@
                 <p><strong>CAS:</strong> <span id="prod-cas"></span></p>
                 <p id="prod-desc"></p>
                 <div class="mt-4 d-flex gap-3">
-                    <button onclick="addToCart(1)" class="btn btn-success btn-lg">Add to Cart</button>
-                    <button onclick="addToInquiry(1)" class="btn btn-primary btn-lg">Add to Inquiry</button>
-                    <button onclick="saveForLater(1)" class="btn btn-outline-secondary btn-lg">Save for Later</button>
+                    <button onclick="addToCart(currentProductId)" class="btn btn-success btn-lg">Add to Cart</button>
+                    <button onclick="addToInquiryAndGo()" class="btn btn-primary btn-lg">Inquiry →</button>
+                    <button onclick="saveForLaterAndGo()" class="btn btn-outline-secondary btn-lg">Save for Later →</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer (copy from index.html) -->
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script> window.onload = loadProductDetail; </script>
 </body>
