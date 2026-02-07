@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChemiPure • High-Purity Research Compounds</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand text-primary" href="index.html">ChemiPure</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                    <li><a class="nav-link" href="products.html">Products</a></li>
+                    <li><a class="nav-link" href="bulk-enquiry.html">Bulk Enquiry</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="header-right d-flex align-items-center">
+                    <a href="#" onclick="login()" class="text-dark">Login</a>
+                    <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</a>
+                    <a href="my-page.html" class="text-dark">My Page</a>
+                    <a href="bulk-enquiry.html" class="text-dark">Bulk Enquiry</a>
+                    <a href="#" class="position-relative text-dark" onclick="alert('Cart: '+cart.length+' items')">Cart <span id="cart-count" class="badge bg-danger">0</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero d-flex align-items-center text-white">
+        <div class="container">
+            <h1 class="display-3 fw-bold">High-Purity Research Compounds</h1>
+            <p class="lead">API | Linkers | Custom Synthesis | Drug Discovery</p>
+            <a href="products.html" class="btn btn-lg btn-light">Explore Products</a>
+        </div>
+    </section>
+
+    <!-- ABOUT & MISSION -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>About ChemiPure</h2>
+                    <p>We are a leading supplier of ultra-high purity research chemicals for pharmaceutical R&D, biotech and academic institutions worldwide.</p>
+                </div>
+                <div class="col-lg-6">
+                    <h2>Our Mission</h2>
+                    <p>To accelerate drug discovery by providing the purest compounds with unmatched quality and rapid delivery.</p>
+                    <h5 class="mt-4">Our Team</h5>
+                    <div class="d-flex gap-3">
+                        <img src="https://picsum.photos/id/64/80/80" class="rounded-circle" alt="">
+                        <img src="https://picsum.photos/id/65/80/80" class="rounded-circle" alt="">
+                        <img src="https://picsum.photos/id/66/80/80" class="rounded-circle" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMIZED SECTION (scroll) -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Customized Organic Compounds</h2>
+            <div class="scroll-container">
+                <div class="scroll-item card"><img src="https://picsum.photos/id/180/280/180" class="card-img-top"><div class="p-3"><h5>Customized Organic Compounds</h5></div></div>
+                <div class="scroll-item card"><img src="https://picsum.photos/id/201/280/180" class="card-img-top"><div class="p-3"><h5>Customized Linkers</h5></div></div>
+                <div class="scroll-item card"><img src="https://picsum.photos/id/220/280/180" class="card-img-top"><div class="p-3"><h5>Customized Drug Design</h5></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT CATEGORIES -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Product Categories</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card card-product h-100" onclick="location.href='products.html?cat=API'">
+                        <img src="https://picsum.photos/id/180/300/200" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5>APIs</h5>
+                            <button class="btn btn-inquiry mt-2">View</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat for Linkers, Custom Synthesis, Drug Discovery -->
+                <!-- ... (copy-paste same block, change image & text) -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer py-5 text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>ChemiPure</h5>
+                    <p>Plot No. 12, Industrial Area, Phase-2, Chandigarh, India 160002</p>
+                    <p>+91 98765 43210 • sales@chemi-pure.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <a href="products.html" class="text-light d-block">Products</a>
+                    <a href="bulk-enquiry.html" class="text-light d-block">Bulk Enquiry</a>
+                </div>
+                <div class="col-md-4 text-end">
+                    <p>© 2026 ChemiPure. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
